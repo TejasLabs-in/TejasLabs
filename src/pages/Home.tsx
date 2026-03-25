@@ -1,128 +1,199 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'motion/react';
-import { ArrowRight, Zap, Beaker, Lightbulb, Target, Rocket } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { ArrowRight, Zap, Beaker, Lightbulb, Target, Rocket, ChevronRight } from 'lucide-react';
+import { useAppContext } from '../context/AppContext';
+import React from 'react';
 
 export default function Home() {
+  const { openModal, theme } = useAppContext();
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
+
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-bg-app transition-colors duration-500">
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 lg:pt-32 lg:pb-48 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-primary text-sm font-bold mb-8">
-                <Zap size={16} />
-                <span>The Future of STEM is Hands-On</span>
-              </div>
-              <h1 className="text-5xl lg:text-7xl font-display font-bold text-slate-900 leading-[1.1] mb-8">
-                Learning by <span className="text-primary italic">Building</span>
-              </h1>
-              <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-lg">
-                We transform traditional science learning into practical exploration through DIY engineering kits that teach real-world principles.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/products"
-                  className="bg-primary text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-blue-600 transition-all flex items-center justify-center gap-2 shadow-xl shadow-blue-500/20"
-                >
-                  Shop Kits <ArrowRight size={20} />
-                </Link>
-                <Link
-                  to="/for-schools"
-                  className="bg-white text-slate-900 border-2 border-slate-200 px-8 py-4 rounded-full text-lg font-bold hover:bg-slate-50 transition-all flex items-center justify-center"
-                >
-                  For Schools
-                </Link>
-              </div>
-            </motion.div>
+      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <motion.div 
+          style={{ opacity, scale }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-bg-soft border border-border-app text-primary text-sm font-bold mb-8"
+          >
+            <Zap size={16} />
+            <span>The Future of STEM is Hands-On</span>
+          </motion.div>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-6xl lg:text-9xl font-display font-bold leading-[1] mb-8 tracking-tighter"
+          >
+            Learning by <br />
+            <span className="text-primary italic">Building.</span>
+          </motion.h1>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl lg:text-2xl text-text-muted mb-12 leading-relaxed max-w-2xl mx-auto font-light"
+          >
+            We transform theoretical science into practical exploration through DIY engineering kits that teach real-world principles.
+          </motion.p>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          >
+            <button
+              onClick={openModal}
+              className="group bg-primary text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-blue-600 transition-all flex items-center gap-2 shadow-2xl shadow-blue-500/20"
             >
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://picsum.photos/seed/tejas-hero/800/600"
-                  alt="STEM Kit Construction"
-                  className="w-full h-auto"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-secondary rounded-full blur-3xl opacity-30 animate-pulse" />
-            </motion.div>
-          </div>
+              Shop Kits <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+            <Link
+              to="/for-schools"
+              className="group text-text-app hover:text-primary transition-colors flex items-center gap-1 text-lg font-medium"
+            >
+              For Schools <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+        </motion.div>
+
+        {/* Background Elements */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/10 rounded-full blur-[120px] opacity-50" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]" />
         </div>
       </section>
 
-      {/* The Problem & Solution */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-16">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-display font-bold text-slate-900">The Problem</h2>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Traditional education often emphasizes theoretical learning and examination performance. This creates a gap between conceptual understanding and real-world problem-solving skills.
-              </p>
+      {/* Product Showcase - Apple Style Grid */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8">
+          <motion.div 
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            viewport={{ once: true }}
+            className="apple-card col-span-2 h-[600px] relative group"
+          >
+            <img 
+              src="/AdvancedKit.jpg" 
+              alt="Advanced Engineering Kit" 
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-12 flex flex-col justify-end">
+              <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4">Professional Grade</span>
+              <h2 className="text-5xl font-display font-bold mb-4">Advanced Robotics</h2>
+              <p className="text-text-muted max-w-md mb-8 text-lg">Build complex autonomous systems with our flagship engineering kit.</p>
+              <button onClick={openModal} className="w-fit bg-text-app text-bg-app px-8 py-3 rounded-full font-bold hover:bg-slate-200 transition-all">Learn More</button>
             </div>
-            <div className="space-y-6">
-              <h2 className="text-3xl font-display font-bold text-primary">Our Solution</h2>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Tejas Labs provides carefully designed engineering kits that allow students to experiment, construct, and explore scientific principles through hands-on building activities.
-              </p>
+          </motion.div>
+
+          <motion.div 
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            viewport={{ once: true }}
+            className="apple-card h-[500px] relative group"
+          >
+            <img 
+              src="/IntermediateKit.jpg" 
+              alt="Intermediate Kit" 
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-10 flex flex-col justify-end">
+              <h3 className="text-3xl font-display font-bold mb-2">Smart Circuits</h3>
+              <p className="text-text-muted mb-6">Master the flow of energy.</p>
+              <button onClick={openModal} className="w-fit text-white font-bold flex items-center gap-1 hover:text-primary transition-colors">Shop Now <ChevronRight size={18} /></button>
             </div>
-          </div>
+          </motion.div>
+
+          <motion.div 
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40 }}
+            viewport={{ once: true }}
+            className="apple-card h-[500px] relative group"
+          >
+            <img 
+              src="/EntryLevelKit.jpg" 
+              alt="Entry Level Kit" 
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-10 flex flex-col justify-end">
+              <h3 className="text-3xl font-display font-bold mb-2">Basic Mechanics</h3>
+              <p className="text-text-muted mb-6">Where every engineer starts.</p>
+              <button onClick={openModal} className="w-fit text-white font-bold flex items-center gap-1 hover:text-primary transition-colors">Shop Now <ChevronRight size={18} /></button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* How It Works Summary */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-display font-bold mb-16">The Learning Pathway</h2>
-          <div className="grid md:grid-cols-4 gap-8">
+      {/* Philosophy Section */}
+      <section className="py-48 bg-bg-soft">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <motion.h2 
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            className="text-4xl lg:text-6xl font-display font-bold mb-12 leading-tight"
+          >
+            "Traditional education is too theoretical. We bridge the gap with <span className="text-primary italic">real-world</span> application."
+          </motion.h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 pt-12 border-t border-border-app">
             {[
-              { icon: <Beaker />, title: 'Choose', desc: 'Select a kit based on interest.' },
-              { icon: <Rocket />, title: 'Build', desc: 'Assemble working models.' },
-              { icon: <Lightbulb />, title: 'Learn', desc: 'Understand core principles.' },
-              { icon: <Target />, title: 'Innovate', desc: 'Experiment and modify.' }
-            ].map((step, i) => (
-              <div key={i} className="space-y-4">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-sm text-primary">
-                  {step.icon}
-                </div>
-                <h3 className="font-bold text-xl">{step.title}</h3>
-                <p className="text-slate-500 text-sm">{step.desc}</p>
+              { label: 'Hands-on', val: '100%' },
+              { label: 'Practical', val: 'Real' },
+              { label: 'Kits', val: 'DIY' },
+              { label: 'Growth', val: 'STEM' }
+            ].map((stat, i) => (
+              <div key={i}>
+                <div className="text-3xl font-display font-bold text-primary mb-2">{stat.val}</div>
+                <div className="text-text-muted text-sm uppercase tracking-widest">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold">Why Hands-On?</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="p-8 rounded-3xl bg-blue-50 border border-blue-100">
-              <h3 className="text-xl font-bold mb-4">Experiential Learning</h3>
-              <p className="text-slate-600">Gain practical exposure to engineering principles through construction activities.</p>
-            </div>
-            <div className="p-8 rounded-3xl bg-yellow-50 border border-yellow-100">
-              <h3 className="text-xl font-bold mb-4">Structured Design</h3>
-              <p className="text-slate-600">Detailed instructions and explanatory guides transform experimentation into meaning.</p>
-            </div>
-            <div className="p-8 rounded-3xl bg-red-50 border border-red-100">
-              <h3 className="text-xl font-bold mb-4">Progressive Growth</h3>
-              <p className="text-slate-600">Advance from beginner kits to sophisticated engineering projects as skills grow.</p>
-            </div>
-          </div>
+      {/* Learning Pathway */}
+      <section className="py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-24">
+          <h2 className="text-5xl font-display font-bold mb-6 tracking-tight">The Learning Pathway</h2>
+          <p className="text-text-muted text-xl font-light">Four steps to engineering mastery.</p>
+        </div>
+        <div className="grid md:grid-cols-4 gap-16">
+          {[
+            { icon: <Beaker />, title: 'Choose', desc: 'Select a kit based on interest.' },
+            { icon: <Rocket />, title: 'Build', desc: 'Assemble working models.' },
+            { icon: <Lightbulb />, title: 'Learn', desc: 'Understand core principles.' },
+            { icon: <Target />, title: 'Innovate', desc: 'Experiment and modify.' }
+          ].map((step, i) => (
+            <motion.div 
+              key={i}
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -20 }}
+              transition={{ delay: i * 0.1 }}
+              className="relative"
+            >
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+                {step.icon}
+              </div>
+              <h3 className="font-bold text-2xl mb-4">{step.title}</h3>
+              <p className="text-text-muted leading-relaxed">{step.desc}</p>
+              {i < 3 && (
+                <div className="hidden md:block absolute top-6 -right-8 w-16 h-[1px] bg-border-app" />
+              )}
+            </motion.div>
+          ))}
         </div>
       </section>
     </div>
