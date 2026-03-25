@@ -32,8 +32,8 @@ export default function Contact() {
             <div className="space-y-12">
               {[
                 { icon: <Mail />, label: 'Email', val: 'hello@tejaslabs.com' },
-                { icon: <Phone />, label: 'Phone', val: '+1 (555) 123-4567' },
-                { icon: <MapPin />, label: 'Studio', val: '123 Innovation Way, Tech Valley, CA' }
+                { icon: <Phone />, label: 'Phone', val: '+91 2575619618' },
+                { icon: <MapPin />, label: 'Studio', val: '24th Floor, Lodha Excelus, New Apollo Mills, Mumbai 400013' }
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-6 group">
                   <div className="w-14 h-14 bg-bg-soft rounded-2xl flex items-center justify-center text-primary border border-border-app group-hover:bg-primary group-hover:text-white transition-all duration-500">
