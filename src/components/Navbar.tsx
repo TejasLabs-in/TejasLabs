@@ -27,7 +27,7 @@ export default function Navbar() {
         <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform overflow-hidden">
-              <img src="/logo.png" alt="Tejas Labs Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              <img src="logo.png" alt="Tejas Labs Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
             </div>
             <span className="text-xl font-display font-bold tracking-tighter text-text-app">
               TEJAS LABS
