@@ -16,6 +16,7 @@ import ShippingPolicy from './pages/legal/ShippingPolicy';
 import ReturnsRefunds from './pages/legal/ReturnsRefunds';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import TermsOfService from './pages/legal/TermsOfService';
+import NotFound from './pages/NotFound';
 import { AppProvider, useAppContext } from './context/AppContext';
 import ComingSoonModal from './components/ComingSoonModal';
 import InvestorModal from './components/InvestorModal';
@@ -40,6 +41,7 @@ function AppContent() {
           <Route path="privacy" element={<PrivacyPolicy />} />
           <Route path="terms" element={<TermsOfService />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <ComingSoonModal isOpen={isModalOpen} onClose={closeModal} />
       <InvestorModal isOpen={isInvestorModalOpen} onClose={closeInvestorModal} />
