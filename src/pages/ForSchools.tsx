@@ -1,104 +1,134 @@
 import { motion } from 'motion/react';
-import { GraduationCap, Building2, Users, ArrowRight, CheckCircle2, Mail } from 'lucide-react';
+import { GraduationCap, Building2, Users, ArrowRight, CheckCircle2, Mail, ShieldCheck, Zap, Globe } from 'lucide-react';
 
 export default function ForSchools() {
   return (
-    <div className="bg-white min-h-screen">
-      {/* Hero */}
-      <section className="bg-primary py-24 text-white">
+    <div className="bg-bg-app text-text-app min-h-screen pt-20">
+      {/* Hero - Professional & Bold */}
+      <section className="py-32 border-b border-border-app">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-bold mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-bold mb-8 border border-primary/20"
           >
-            <GraduationCap size={16} />
-            <span>Trusted by 200+ Schools Worldwide</span>
+            <ShieldCheck size={16} />
+            <span>Trusted by 200+ Institutions</span>
           </motion.div>
-          <h1 className="text-4xl md:text-6xl font-display font-bold mb-8">Transform Your STEM Lab</h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-12">
-            Bring hands-on engineering to your classroom with our bulk kits, curriculum integration, and teacher workshops.
+          <h1 className="text-6xl md:text-9xl font-display font-bold mb-12 tracking-tighter leading-[0.9]">
+            Future-Proof Your <br />
+            <span className="text-primary">Curriculum.</span>
+          </h1>
+          <p className="text-2xl text-text-muted max-w-3xl mx-auto mb-16 font-light leading-relaxed">
+            Empower your students with hands-on engineering kits designed for classroom excellence and curriculum integration.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#inquiry" className="bg-white text-primary px-8 py-4 rounded-full text-lg font-bold hover:bg-secondary hover:text-slate-900 transition-all">
-              Request a Quote
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <a href="#inquiry" className="bg-primary text-white px-12 py-5 rounded-full text-lg font-bold hover:bg-blue-600 transition-all shadow-2xl shadow-blue-500/20">
+              Partner With Us
             </a>
-            <a href="#" className="bg-primary border-2 border-white/20 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-white/10 transition-all">
-              Download Catalog
+            <a href="#" className="bg-bg-soft border border-border-app text-text-app px-12 py-5 rounded-full text-lg font-bold hover:bg-white/10 transition-all">
+              Download Institutional Catalog
             </a>
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-12">
+      {/* Value Propositions - Clean Grids */}
+      <section className="py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {[
             {
-              icon: <Building2 size={32} className="text-primary" />,
-              title: 'Bulk Orders',
-              desc: 'Special pricing for classroom sets. We provide everything you need for a class of 30+ students.'
+              icon: <Zap size={32} />,
+              title: 'Rapid Deployment',
+              desc: 'Ready-to-use classroom sets with comprehensive teacher guides for immediate implementation.'
             },
             {
-              icon: <Users size={32} className="text-primary" />,
-              title: 'Teacher Workshops',
-              desc: 'Professional development sessions to help educators integrate our kits into their existing curriculum.'
+              icon: <Users size={32} />,
+              title: 'Expert Support',
+              desc: 'Dedicated STEM coordinators to help you align our kits with your specific learning objectives.'
             },
             {
-              icon: <CheckCircle2 size={32} className="text-primary" />,
-              title: 'STEM Lab Setup',
-              desc: 'From furniture to equipment, we help you design and build a state-of-the-art maker space.'
+              icon: <Globe size={32} />,
+              title: 'Global Standards',
+              desc: 'Curriculum designed to meet international engineering and science education benchmarks.'
             }
           ].map((service, i) => (
-            <div key={i} className="p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all">
-              <div className="mb-6">{service.icon}</div>
-              <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-              <p className="text-slate-600 leading-relaxed">{service.desc}</p>
-            </div>
+            <motion.div 
+              key={i}
+              whileHover={{ y: -10 }}
+              className="apple-card p-12 border-border-app"
+            >
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 text-primary">
+                {service.icon}
+              </div>
+              <h3 className="text-3xl font-bold mb-6">{service.title}</h3>
+              <p className="text-xl text-text-muted leading-relaxed font-light">{service.desc}</p>
+            </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Inquiry Form */}
-      <section id="inquiry" className="py-24 bg-slate-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-4">School Inquiry Form</h2>
-            <p className="text-slate-400">Tell us about your school's needs and we'll get back to you within 24 hours.</p>
+      {/* Stats / Trust Signals */}
+      <section className="py-32 bg-bg-soft border-y border-border-app">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            {[
+              { label: 'Students Impacted', val: '50k+' },
+              { label: 'Partner Schools', val: '200+' },
+              { label: 'Countries', val: '15+' },
+              { label: 'Lab Setups', val: '85' }
+            ].map((stat, i) => (
+              <div key={i}>
+                <div className="text-5xl font-display font-bold text-primary mb-2 tracking-tighter">{stat.val}</div>
+                <div className="text-text-muted uppercase tracking-widest text-xs font-bold">{stat.label}</div>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-slate-300">Full Name</label>
-              <input type="text" className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary outline-none" placeholder="John Doe" />
+      {/* Inquiry Form - Modern Utility */}
+      <section id="inquiry" className="py-48">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="glass-form p-12 md:p-20 rounded-[3rem]">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-display font-bold mb-6 tracking-tight">Institutional Inquiry</h2>
+              <p className="text-xl text-text-muted font-light">Let's discuss how we can elevate your STEM program.</p>
             </div>
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-slate-300">School Email</label>
-              <input type="email" className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary outline-none" placeholder="john@school.edu" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-slate-300">School Name</label>
-              <input type="text" className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary outline-none" placeholder="Innovation High" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-slate-300">Role</label>
-              <select className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary outline-none">
-                <option>Teacher</option>
-                <option>Principal</option>
-                <option>STEM Coordinator</option>
-                <option>District Admin</option>
-              </select>
-            </div>
-            <div className="md:col-span-2 space-y-2">
-              <label className="text-sm font-bold text-slate-300">Message</label>
-              <textarea rows={4} className="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary outline-none" placeholder="How can we help you?"></textarea>
-            </div>
-            <div className="md:col-span-2 pt-4">
-              <button className="w-full bg-primary text-white py-4 rounded-xl font-bold hover:bg-blue-600 transition-all flex items-center justify-center gap-2">
-                Send Inquiry <ArrowRight size={20} />
-              </button>
-            </div>
-          </form>
+
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="relative group">
+                <input type="text" id="name" className="w-full bg-transparent border-b border-border-app py-4 outline-none focus:border-primary transition-colors peer text-xl" placeholder=" " />
+                <label htmlFor="name" className="absolute left-0 top-4 text-text-muted transition-all peer-focus:-top-4 peer-focus:text-sm peer-focus:text-primary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-sm">Full Name</label>
+              </div>
+              <div className="relative group">
+                <input type="email" id="email" className="w-full bg-transparent border-b border-border-app py-4 outline-none focus:border-primary transition-colors peer text-xl" placeholder=" " />
+                <label htmlFor="email" className="absolute left-0 top-4 text-text-muted transition-all peer-focus:-top-4 peer-focus:text-sm peer-focus:text-primary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-sm">School Email</label>
+              </div>
+              <div className="relative group">
+                <input type="text" id="school" className="w-full bg-transparent border-b border-border-app py-4 outline-none focus:border-primary transition-colors peer text-xl" placeholder=" " />
+                <label htmlFor="school" className="absolute left-0 top-4 text-text-muted transition-all peer-focus:-top-4 peer-focus:text-sm peer-focus:text-primary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-sm">School Name</label>
+              </div>
+              <div className="relative group">
+                <select id="role" className="w-full bg-transparent border-b border-border-app py-4 outline-none focus:border-primary transition-colors peer text-xl appearance-none">
+                  <option className="bg-bg-app">Teacher</option>
+                  <option className="bg-bg-app">Principal</option>
+                  <option className="bg-bg-app">STEM Coordinator</option>
+                  <option className="bg-bg-app">District Admin</option>
+                </select>
+                <label htmlFor="role" className="absolute left-0 -top-4 text-sm text-primary">Role</label>
+              </div>
+              <div className="md:col-span-2 relative group">
+                <textarea id="message" rows={4} className="w-full bg-transparent border-b border-border-app py-4 outline-none focus:border-primary transition-colors peer text-xl resize-none" placeholder=" "></textarea>
+                <label htmlFor="message" className="absolute left-0 top-4 text-text-muted transition-all peer-focus:-top-4 peer-focus:text-sm peer-focus:text-primary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-sm">Message</label>
+              </div>
+              <div className="md:col-span-2 pt-8">
+                <button className="w-full bg-primary text-white py-6 rounded-full font-bold hover:bg-blue-600 transition-all flex items-center justify-center gap-3 text-xl shadow-2xl shadow-blue-500/20">
+                  Send Inquiry <ArrowRight size={24} />
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
     </div>
