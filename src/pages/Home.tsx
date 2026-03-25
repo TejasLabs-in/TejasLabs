@@ -85,7 +85,7 @@ export default function Home() {
             className="apple-card col-span-2 h-[600px] relative group"
           >
             <img 
-              src="/AdvancedKit.jpg" 
+              src="AdvancedKit.jpg" 
               alt="Advanced Engineering Kit" 
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               referrerPolicy="no-referrer"
@@ -105,7 +105,7 @@ export default function Home() {
             className="apple-card h-[500px] relative group"
           >
             <img 
-              src="/IntermediateKit.jpg" 
+              src="IntermediateKit.jpg" 
               alt="Intermediate Kit" 
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               referrerPolicy="no-referrer"
@@ -124,7 +124,7 @@ export default function Home() {
             className="apple-card h-[500px] relative group"
           >
             <img 
-              src="/EntryLevelKit.jpg" 
+              src="EntryLevelKit.jpg" 
               alt="Entry Level Kit" 
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               referrerPolicy="no-referrer"
