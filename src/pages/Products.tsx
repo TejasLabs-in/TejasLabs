@@ -9,7 +9,7 @@ const products = [
     category: 'Mechanics',
     price: '₹1,999',
     level: 'Beginner',
-    img: '/EntryLevelKit.jpg',
+    img: 'EntryLevelKit.jpg',
     build: 'Rubber-band powered vehicle',
     learn: 'Energy storage, motion, and mechanical efficiency.',
     description: 'A perfect entry point into engineering. Build a vehicle that transforms potential energy into kinetic motion.'
@@ -20,7 +20,7 @@ const products = [
     category: 'Fluid Mechanics',
     price: '₹3,499',
     level: 'Intermediate',
-    img: '/IntermediateKit.jpg',
+    img: 'IntermediateKit.jpg',
     build: '4-axis robotic arm',
     learn: 'Fluid mechanics and force transmission through hydraulic systems.',
     description: 'Master the power of water. Construct a functional arm that can lift and move objects using hydraulic pressure.'
@@ -31,7 +31,7 @@ const products = [
     category: 'Electronics',
     price: '₹6,999',
     level: 'Advanced',
-    img: '/AdvancedKit.jpg',
+    img: 'AdvancedKit.jpg',
     build: 'Automated circuit device',
     learn: 'Electronic circuits and control mechanisms.',
     description: 'Our most advanced kit. Dive into the world of circuits, sensors, and automated control systems.'
