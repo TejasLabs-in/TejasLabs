@@ -63,13 +63,13 @@ export default function About() {
               name: 'Dev Vora',
               role: 'CEO & Co-Founder',
               bio: 'Responsible for strategic vision and overall direction. Background in technology and analytics, focusing on integrating engineering with modern educational methods.',
-              img: '/Dev Vora.png'
+              img: 'DevVora.png'
             },
             {
               name: 'Siddharth Vaddepalli',
               role: 'CFO & Co-Founder',
               bio: 'Leads financial and operational management. Ensures financial sustainability while expanding manufacturing and distribution capabilities.',
-              img: '/Siddharth Vaddepalli.jpg'
+              img: 'SiddharthVaddepalli.jpg'
             }
           ].map((member, i) => (
             <div key={i} className="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 group hover:border-primary transition-all text-center">
