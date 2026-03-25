@@ -137,14 +137,14 @@ export default function Investors() {
               <div className="flex gap-8">
                 <div className="text-center">
                   <div className="w-24 h-24 rounded-full overflow-hidden mb-4 mx-auto">
-                    <img src="/Dev Vora.png" alt="Dev Vora" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src="Dev Vora.png" alt="Dev Vora" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                   <div className="font-bold">Dev Vora</div>
                   <div className="text-xs text-slate-500">CEO & Co-Founder</div>
                 </div>
                 <div className="text-center">
                   <div className="w-24 h-24 rounded-full overflow-hidden mb-4 mx-auto">
-                    <img src="/Siddharth Vaddepalli.jpg" alt="Siddharth Vaddepalli" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img src="Siddharth Vaddepalli.jpg" alt="Siddharth Vaddepalli" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                   <div className="font-bold">Siddharth Vaddepalli</div>
                   <div className="text-xs text-slate-500">CFO & Co-Founder</div>
