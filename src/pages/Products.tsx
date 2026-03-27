@@ -12,6 +12,7 @@ const products = [
     img: 'EntryLevelKit.jpg',
     build: 'Rubber-band powered vehicle',
     learn: 'Energy storage, motion, and mechanical efficiency.',
+    age: 'Ages 10-12',
     description: 'A perfect entry point into engineering. Build a vehicle that transforms potential energy into kinetic motion.'
   },
   {
@@ -23,6 +24,7 @@ const products = [
     img: 'IntermediateKit.jpg',
     build: '4-axis robotic arm',
     learn: 'Fluid mechanics and force transmission through hydraulic systems.',
+    age: 'Ages 13-15',
     description: 'Master the power of water. Construct a functional arm that can lift and move objects using hydraulic pressure.'
   },
   {
@@ -34,6 +36,7 @@ const products = [
     img: 'AdvancedKit.jpg',
     build: 'Automated circuit device',
     learn: 'Electronic circuits and control mechanisms.',
+    age: 'Ages 16+',
     description: 'Our most advanced kit. Dive into the world of circuits, sensors, and automated control systems.'
   }
 ];
@@ -122,7 +125,7 @@ export default function Products() {
               <div key={p.id} className="text-center p-8 border-r last:border-0 border-border-app">
                 <h4 className="font-bold text-xl mb-4">{p.name}</h4>
                 <div className="space-y-4 text-text-muted text-sm">
-                  <p>Ages 8-12+</p>
+                  <p className="text-primary font-bold">{p.age}</p>
                   <p>15+ Components</p>
                   <p>Detailed Guidebook</p>
                   <p>Video Tutorials</p>
