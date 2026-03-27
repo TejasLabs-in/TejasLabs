@@ -32,7 +32,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl lg:text-9xl font-display font-bold leading-[1] mb-8 tracking-tighter"
+            className="text-5xl sm:text-6xl lg:text-9xl font-display font-bold leading-[1.1] sm:leading-[1] mb-8 tracking-tighter"
           >
             Learning by <br />
             <span className="text-primary italic">Building.</span>
@@ -42,7 +42,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl lg:text-2xl text-text-muted mb-12 leading-relaxed max-w-2xl mx-auto font-light"
+            className="text-lg sm:text-xl lg:text-2xl text-text-muted mb-12 leading-relaxed max-w-2xl mx-auto font-light px-4"
           >
             We transform theoretical science into practical exploration through DIY engineering kits that teach real-world principles.
           </motion.p>
@@ -70,19 +70,19 @@ export default function Home() {
 
         {/* Background Elements */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/10 rounded-full blur-[120px] opacity-50" />
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[1000px] h-[600px] sm:h-[1000px] bg-primary/10 rounded-full blur-[80px] sm:blur-[120px] opacity-50" />
+          <div className={`absolute top-0 left-0 w-full h-full ${theme === 'dark' ? 'bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]' : 'bg-[radial-gradient(circle_at_center,transparent_0%,rgba(245,245,247,0.8)_100%)]'}`} />
         </div>
       </section>
 
       {/* Product Showcase - Apple Style Grid */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-8">
+      <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
           <motion.div 
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 40 }}
             viewport={{ once: true }}
-            className="apple-card col-span-2 h-[600px] relative group"
+            className="apple-card col-span-1 md:col-span-2 h-[400px] sm:h-[600px] relative group"
           >
             <img 
               src="AdvancedKit.jpg" 
@@ -90,11 +90,11 @@ export default function Home() {
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-12 flex flex-col justify-end">
-              <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4">Professional Grade</span>
-              <h2 className="text-5xl font-display font-bold mb-4">Advanced Robotics</h2>
-              <p className="text-text-muted max-w-md mb-8 text-lg">Build complex autonomous systems with our flagship engineering kit.</p>
-              <button onClick={openModal} className="w-fit bg-text-app text-bg-app px-8 py-3 rounded-full font-bold hover:bg-slate-200 transition-all">Learn More</button>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 sm:p-12 flex flex-col justify-end">
+              <span className="text-primary font-bold tracking-widest uppercase text-xs sm:text-sm mb-2 sm:mb-4">Professional Grade</span>
+              <h2 className="text-3xl sm:text-5xl font-display font-bold mb-2 sm:mb-4 text-white">Advanced Robotics</h2>
+              <p className="text-white/70 max-w-md mb-4 sm:mb-8 text-base sm:text-lg font-light">Build complex autonomous systems with our flagship engineering kit.</p>
+              <button onClick={openModal} className="w-fit bg-white text-black px-6 sm:px-8 py-2 sm:py-3 rounded-full font-bold hover:bg-slate-200 transition-all text-sm sm:text-base">Learn More</button>
             </div>
           </motion.div>
 
@@ -102,7 +102,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 40 }}
             viewport={{ once: true }}
-            className="apple-card h-[500px] relative group"
+            className="apple-card h-[400px] sm:h-[500px] relative group"
           >
             <img 
               src="IntermediateKit.jpg" 
@@ -110,10 +110,10 @@ export default function Home() {
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-10 flex flex-col justify-end">
-              <h3 className="text-3xl font-display font-bold mb-2">Smart Circuits</h3>
-              <p className="text-text-muted mb-6">Master the flow of energy.</p>
-              <button onClick={openModal} className="w-fit text-white font-bold flex items-center gap-1 hover:text-primary transition-colors">Shop Now <ChevronRight size={18} /></button>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-6 sm:p-10 flex flex-col justify-end">
+              <h3 className="text-2xl sm:text-3xl font-display font-bold mb-2 text-white">Smart Circuits</h3>
+              <p className="text-white/70 mb-4 sm:mb-6 text-sm sm:text-base font-light">Master the flow of energy.</p>
+              <button onClick={openModal} className="w-fit text-white font-bold flex items-center gap-1 hover:text-primary transition-colors text-sm sm:text-base">Shop Now <ChevronRight size={18} /></button>
             </div>
           </motion.div>
 
@@ -121,7 +121,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 40 }}
             viewport={{ once: true }}
-            className="apple-card h-[500px] relative group"
+            className="apple-card h-[400px] sm:h-[500px] relative group"
           >
             <img 
               src="EntryLevelKit.jpg" 
@@ -129,26 +129,26 @@ export default function Home() {
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-10 flex flex-col justify-end">
-              <h3 className="text-3xl font-display font-bold mb-2">Basic Mechanics</h3>
-              <p className="text-text-muted mb-6">Where every engineer starts.</p>
-              <button onClick={openModal} className="w-fit text-white font-bold flex items-center gap-1 hover:text-primary transition-colors">Shop Now <ChevronRight size={18} /></button>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-6 sm:p-10 flex flex-col justify-end">
+              <h3 className="text-2xl sm:text-3xl font-display font-bold mb-2 text-white">Basic Mechanics</h3>
+              <p className="text-white/70 mb-4 sm:mb-6 text-sm sm:text-base font-light">Where every engineer starts.</p>
+              <button onClick={openModal} className="w-fit text-white font-bold flex items-center gap-1 hover:text-primary transition-colors text-sm sm:text-base">Shop Now <ChevronRight size={18} /></button>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-48 bg-bg-soft">
+      <section className="py-24 sm:py-48 bg-bg-soft">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.h2 
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
-            className="text-4xl lg:text-6xl font-display font-bold mb-12 leading-tight"
+            className="text-3xl sm:text-4xl lg:text-6xl font-display font-bold mb-12 leading-tight"
           >
             "Traditional education is too theoretical. We bridge the gap with <span className="text-primary italic">real-world</span> application."
           </motion.h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 pt-12 border-t border-border-app">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 pt-12 border-t border-border-app">
             {[
               { label: 'Hands-on', val: '100%' },
               { label: 'Practical', val: 'Real' },
@@ -156,8 +156,8 @@ export default function Home() {
               { label: 'Growth', val: 'STEM' }
             ].map((stat, i) => (
               <div key={i}>
-                <div className="text-3xl font-display font-bold text-primary mb-2">{stat.val}</div>
-                <div className="text-text-muted text-sm uppercase tracking-widest">{stat.label}</div>
+                <div className="text-2xl sm:text-3xl font-display font-bold text-primary mb-2">{stat.val}</div>
+                <div className="text-text-muted text-xs sm:text-sm uppercase tracking-widest">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -165,12 +165,12 @@ export default function Home() {
       </section>
 
       {/* Learning Pathway */}
-      <section className="py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-24">
-          <h2 className="text-5xl font-display font-bold mb-6 tracking-tight">The Learning Pathway</h2>
-          <p className="text-text-muted text-xl font-light">Four steps to engineering mastery.</p>
+      <section className="py-20 sm:py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 sm:mb-24">
+          <h2 className="text-4xl sm:text-5xl font-display font-bold mb-4 sm:mb-6 tracking-tight">The Learning Pathway</h2>
+          <p className="text-text-muted text-lg sm:text-xl font-light">Four steps to engineering mastery.</p>
         </div>
-        <div className="grid md:grid-cols-4 gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 sm:gap-16">
           {[
             { icon: <Beaker />, title: 'Choose', desc: 'Select a kit based on interest.' },
             { icon: <Rocket />, title: 'Build', desc: 'Assemble working models.' },
@@ -187,8 +187,8 @@ export default function Home() {
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
                 {step.icon}
               </div>
-              <h3 className="font-bold text-2xl mb-4">{step.title}</h3>
-              <p className="text-text-muted leading-relaxed">{step.desc}</p>
+              <h3 className="font-bold text-xl sm:text-2xl mb-3 sm:mb-4">{step.title}</h3>
+              <p className="text-text-muted leading-relaxed text-sm sm:text-base">{step.desc}</p>
               {i < 3 && (
                 <div className="hidden md:block absolute top-6 -right-8 w-16 h-[1px] bg-border-app" />
               )}
