@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Beaker, Mail, Phone, MapPin, Github, Twitter, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Twitter, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -9,8 +9,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <Beaker className="text-white w-5 h-5" />
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center overflow-hidden">
+                <img src="logo.png" alt="Tejas Labs Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
               <span className="text-xl font-display font-bold text-text-app tracking-tighter">
                 TEJAS LABS
