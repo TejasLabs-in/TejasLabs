@@ -65,10 +65,11 @@ export default function Investors() {
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <button 
-                onClick={openInvestorModal}
                 className="bg-primary text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-blue-600 transition-all flex items-center justify-center gap-2 shadow-2xl shadow-blue-500/20"
               >
-                Request Pitch Deck <Download size={20} />
+                <a href="/Tejas Labs Business Plan.pdf"
+                    download="Tejas Labs Business Plan.pdf">
+                Request Pitch Deck <Download size={20} /> </a>
               </button>
               <button 
                 onClick={openInvestorModal}
@@ -297,10 +298,12 @@ export default function Investors() {
             </p>
             <div className="flex flex-wrap gap-6 justify-center">
               <button 
-                onClick={openInvestorModal}
                 className="bg-primary text-white px-12 py-6 rounded-full text-xl font-bold hover:bg-blue-600 transition-all flex items-center gap-3 shadow-2xl shadow-blue-500/20"
               >
-                Download Pitch Deck <ArrowUpRight size={24} />
+                
+                <a href="/Tejas Labs Business Plan.pdf"
+                    download="Tejas Labs Business Plan.pdf">
+                Download Pitch Deck <ArrowUpRight size={24} /> </a>
               </button>
               <button 
                 onClick={openInvestorModal}
