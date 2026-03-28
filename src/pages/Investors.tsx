@@ -69,7 +69,7 @@ export default function Investors() {
               >
                 <a href="Tejas Labs Business Plan.pdf"
                     download="Tejas Labs Business Plan.pdf">
-                Request Pitch Deck <Download size={20} /> </a>
+                Request Pitch Deck&nbsp;<Download size={20} /> </a>
               </button>
               <button 
                 onClick={openInvestorModal}
@@ -303,7 +303,7 @@ export default function Investors() {
                 
                 <a href="Tejas Labs Business Plan.pdf"
                     download="Tejas Labs Business Plan.pdf">
-                Download Pitch Deck <ArrowUpRight size={24} /> </a>
+                Download Pitch Deck&nbsp;<ArrowUpRight size={24} /> </a>
               </button>
               <button 
                 onClick={openInvestorModal}
