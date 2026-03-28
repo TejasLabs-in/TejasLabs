@@ -64,13 +64,11 @@ export default function Investors() {
               Tejas Labs makes hands-on engineering education accessible through affordable, structured DIY kits and school partnerships. Currently bootstrapped and building for scale.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <button 
+              <a 
                 className="bg-primary text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-blue-600 transition-all flex items-center justify-center gap-2 shadow-2xl shadow-blue-500/20"
-              >
-                <a href="Tejas Labs Business Plan.pdf"
+               href="Tejas Labs Business Plan.pdf"
                     download="Tejas Labs Business Plan.pdf">
-                Request Pitch Deck&nbsp;<Download size={20} /> </a>
-              </button>
+                Request Pitch Deck <Download size={20} /> </a>
               <button 
                 onClick={openInvestorModal}
                 className="bg-bg-soft text-text-app border border-border-app px-10 py-5 rounded-full text-lg font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2"
@@ -297,14 +295,11 @@ export default function Investors() {
               We're looking for partners who share our vision of transforming STEM education in India.
             </p>
             <div className="flex flex-wrap gap-6 justify-center">
-              <button 
+              <a 
                 className="bg-primary text-white px-12 py-6 rounded-full text-xl font-bold hover:bg-blue-600 transition-all flex items-center gap-3 shadow-2xl shadow-blue-500/20"
-              >
-                
-                <a href="Tejas Labs Business Plan.pdf"
+               href="Tejas Labs Business Plan.pdf"
                     download="Tejas Labs Business Plan.pdf">
                 Download Pitch Deck&nbsp;<ArrowUpRight size={24} /> </a>
-              </button>
               <button 
                 onClick={openInvestorModal}
                 className="bg-white text-black px-12 py-6 rounded-full text-xl font-bold hover:bg-slate-200 transition-all flex items-center gap-3 shadow-2xl shadow-white/5"
